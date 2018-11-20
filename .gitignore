@@ -1,0 +1,9 @@
+# Only autoconf files are ignored.
+# Automake and libtool files must be checked in, because the user
+# is only required to have autoconf installed.
+
+autom4te.cache
+/config.log
+/config.status
+/configure
+/stamp-h1
