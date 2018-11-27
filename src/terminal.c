@@ -422,7 +422,7 @@ terminal_rebuffer_display(EditLine *el)
 static wchar_t **
 terminal_alloc_buffer(EditLine *el)
 {
-	wint_t **b;
+	wchar_t **b;
 	coord_t *c = &el->el_terminal.t_size;
 	int i;
 
@@ -443,10 +443,10 @@ terminal_alloc_buffer(EditLine *el)
 }
 
 static void
-terminal_free_buffer(wint_t ***bp)
+terminal_free_buffer(wchar_t ***bp)
 {
-	wint_t **b;
-	wint_t **bufp;
+	wchar_t **b;
+	wchar_t **bufp;
 
 	if (*bp == NULL)
 		return;
