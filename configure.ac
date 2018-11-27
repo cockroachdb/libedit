@@ -39,6 +39,9 @@ AC_SUBST(LT_VERSION, [0:60:0])
 
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
+# Don't try to run automake automatically.
+AM_MAINTAINER_MODE
+
 # Checks for programs.
 AC_PROG_CC_C99
 #AC_PROG_CC
