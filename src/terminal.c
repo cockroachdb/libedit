@@ -509,15 +509,10 @@ terminal_move_to_line(EditLine *el, int where)
 		return;
 	}
 	if ((del = where - el->el_cursor.v) > 0) {
-		if ((del > 1) && GoodStr(T_DO)) {
-			terminal_tputs(el, tgoto(Str(T_DO), del, del), del);
-			del = 0;
-		} else {
-			for (; del > 0; del--)
-				terminal__putc(el, '\n');
-			/* because the \n will become \r\n */
-			el->el_cursor.h = 0;
-		}
+		for (; del > 0; del--)
+			terminal__putc(el, '\n');
+		/* because the \n will become \r\n */
+		el->el_cursor.h = 0;
 	} else {		/* del < 0 */
 		if (GoodStr(T_UP) && (-del > 1 || !GoodStr(T_up)))
 			terminal_tputs(el, tgoto(Str(T_UP), -del, -del), -del);
